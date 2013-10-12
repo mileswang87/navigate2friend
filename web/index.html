@@ -23,9 +23,9 @@
     </style>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-<body>
+<body ng-app="pickmeup">
 <div class="container h600 mt50">
-    <div class="col-md-2 panel panel-default">
+    <div class="col-md-3 panel panel-default">
         <div class="panel-body">
             <ul class="list-group">
                 <li class="list-group-item">
@@ -42,21 +42,24 @@
                 </li>
                 <li class="list-group-item">
                     <img src="images/jiong.png" class="img32"/>
-                    Daniel
+                    {{ name||"InvisibleGuy" }}
                 </li>
             </ul>
+            <label>
+                <input type="text" ng-model="name" />
+            </label>
             <button onclick="calcRoute()">Route!!</button>
             <!--<button onclick="dropMarker()">Mark!!</button>-->
         </div>
     </div>
-    <div class="col-md-10 panel panel-default">
+    <div class="col-md-9 panel panel-default">
         <div class="panel-body h600">
         <div id="map-canvas"></div>
 
         </div>
     </div>
 </div>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script src="javascript/main.js"></script>
 </body>

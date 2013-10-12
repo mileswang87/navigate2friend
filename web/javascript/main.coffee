@@ -43,5 +43,9 @@ window.dropMarker = () ->
     icon: image
   )
 
+#angularJS part
+
+myModule = angular.module('pickmeup', [])
+
 
 google.maps.event.addDomListener window, 'load', initialize;
