@@ -1,5 +1,4 @@
-#angularJS part
-
+# author: wangxunn
 
 FriendsClass = () ->
   @list = []

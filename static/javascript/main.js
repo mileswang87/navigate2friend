@@ -25,42 +25,20 @@
       center: usf
     };
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-    directionsDisplay.setMap(map);
-    return directionsDisplay.setOptions({
-      markerOptions: {
-        position: usf,
-        map: map,
-        icon: image
-      }
-    });
+    return directionsDisplay.setMap(map);
   };
 
-  window.calcRoute = function() {
+  window.calcRoute = function(from, to) {
     var request;
     request = {
-      origin: usf,
-      destination: "Daly City",
+      origin: from,
+      destination: to,
       travelMode: google.maps.TravelMode.DRIVING
     };
     return directionsService.route(request, function(result, status) {
       if (status === google.maps.DirectionsStatus.OK) {
         return directionsDisplay.setDirections(result);
       }
-    });
-  };
-
-  window.dropMarker = function() {
-    var image, marker;
-    image = {
-      url: "images/jiong.png",
-      scaledSize: new google.maps.Size(32, 32),
-      origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(0, 32)
-    };
-    return marker = new google.maps.Marker({
-      position: usf,
-      map: map,
-      icon: image
     });
   };
 

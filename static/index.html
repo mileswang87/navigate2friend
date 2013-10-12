@@ -19,33 +19,19 @@
 </head>
 <body ng-app="pickmeup" ng-cloak>
 <div class="container h600 mt50">
-    <div class="col-md-3 panel panel-default">
+    <div class="col-md-3">
+        <div class="panel panel-primary">
+        <div class="panel-heading">
+            Click to navigate
+        </div>
         <div class="panel-body" ng-controller="ListController">
             <ul class="list-group">
-                <!--<li class="list-group-item">-->
-                    <!--<img src="images/jiong.png" class="img32"/>-->
-                    <!--Adam-->
-                <!--</li>-->
-                <!--<li class="list-group-item">-->
-                    <!--<img src="images/jiong.png" class="img32"/>-->
-                    <!--Bob-->
-                <!--</li>-->
-                <!--<li class="list-group-item">-->
-                    <!--<img src="images/jiong.png" class="img32"/>-->
-                    <!--Catherine-->
-                <!--</li>-->
-                <li class="list-group-item" ng-repeat="friend in friends_list">
-                <a href="http://maps.apple.com/?q=san%20francisco">
-                    <img src="images/jiong.png" class="img32"/>
+                <li class="list-group-item" ng-repeat="friend in friends.list" onclick="calcRoute('{{ location.current_location }}', '{{ friend.latitude | escape }},{{ friend.longitude |escape }}')">
+                    <img ng-src="https://graph.facebook.com/{{ friend.ID }}/picture?type=square" class="img32"/>
                     {{ friend.name }}
-                </a>
                 </li>
             </ul>
-            <!--<label>-->
-                <!--<input type="text" ng-model="name_1" />-->
-            <!--</label>-->
-            <button onclick="calcRoute()">Route!!</button>
-            <!--<button onclick="dropMarker()">Mark!!</button>-->
+        </div>
         </div>
     </div>
     <div class="col-md-9 panel panel-default">
@@ -57,7 +43,7 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-<script src="javascript/main.js"></script>
 <script src="javascript/controller.js"></script>
+<script src="javascript/main.js"></script>
 </body>
 </html>
