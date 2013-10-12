@@ -1,6 +1,6 @@
-Navigate to Friend
-
+Hack name: Navigate to Friend
 Work with @ssmyadam
+
 
 Demo:
 For desktop:
