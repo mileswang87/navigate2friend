@@ -4,13 +4,12 @@
 FriendsClass = () ->
   @list = []
   @demo = () ->
-    @list = ["1", "2", "3"]
+    @list = ["Adam", "Bob", "Catherine", "Daniel"]
 
 ListController = ($scope, Friends) ->
   Friends.demo()
   $scope.friends_list = Friends.list
-  Friends.list.push("from outside")
-  $scope.name_1 = 123
+  Friends.list.push("Miles")
 
 app = angular.module('pickmeup', [])
 app.service 'Friends', FriendsClass

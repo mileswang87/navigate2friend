@@ -12,21 +12,9 @@
 <div class="container panel panel-body">
     <div class="panel-body" ng-controller="ListController">
         <ul class="list-group">
-            <!--<li class="list-group-item">-->
-            <!--<img src="images/jiong.png" class="img32"/>-->
-            <!--Adam-->
-            <!--</li>-->
-            <!--<li class="list-group-item">-->
-            <!--<img src="images/jiong.png" class="img32"/>-->
-            <!--Bob-->
-            <!--</li>-->
-            <!--<li class="list-group-item">-->
-            <!--<img src="images/jiong.png" class="img32"/>-->
-            <!--Catherine-->
-            <!--</li>-->
             <li class="list-group-item" ng-repeat="friend in friends_list">
                 <img src="images/jiong.png" class="img32"/>
-                {{ friend||"InvisibleGuy" }}
+                {{ friend }}
             </li>
         </ul>
         <!--<label>-->

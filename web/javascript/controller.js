@@ -5,15 +5,14 @@
   FriendsClass = function() {
     this.list = [];
     return this.demo = function() {
-      return this.list = ["1", "2", "3"];
+      return this.list = ["Adam", "Bob", "Catherine", "Daniel"];
     };
   };
 
   ListController = function($scope, Friends) {
     Friends.demo();
     $scope.friends_list = Friends.list;
-    Friends.list.push("from outside");
-    return $scope.name_1 = 123;
+    return Friends.list.push("Miles");
   };
 
   app = angular.module('pickmeup', []);
