@@ -29,6 +29,7 @@
                 <li class="list-group-item" ng-repeat="friend in friends.list" onclick="calcRoute('{{ location.current_location }}', '{{ friend.latitude | escape }},{{ friend.longitude |escape }}')">
                     <img ng-src="https://graph.facebook.com/{{ friend.ID }}/picture?type=square" class="img32"/>
                     {{ friend.name }}
+                    <span class="f2">at {{ friend.location }}</span>
                 </li>
             </ul>
         </div>
