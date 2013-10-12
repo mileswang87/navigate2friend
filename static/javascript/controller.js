@@ -20,8 +20,8 @@
   ListController = function($scope, $http, Friends) {
     var ios, pull, ua;
     $scope.friends = Friends;
-    ua = navigator.userAgent;
-    ios = ua.indexOf('iPhone') >= 0 || ua.indexOf('iPad') >= 0 || ua.indexOf('iPod') >= 0;
+    ua = navigator.userAgent.toLowerCase();
+    ios = ua.indexOf('iphone') >= 0 || ua.indexOf('ipad') >= 0 || ua.indexOf('ipod') >= 0;
     console.log(ios);
     pull = function() {
       var p;
