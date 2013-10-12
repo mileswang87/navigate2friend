@@ -12,19 +12,23 @@ FriendsClass = () ->
       location:"San Francisco"
     ]
 
+LocationService = () ->
+  @current_location = "Current+Location"
 
 
-ListController = ($scope, $http, Friends) ->
+ListController = ($scope, $http, Friends, Location) ->
 #  Friends.demo()
   $scope.friends = Friends
+  $scope.location = Location
   ua = navigator.userAgent.toLowerCase()
-  $scope.ios = ua.match /(iPad|iPhone);.*CPU.*OS 7_\d/i
+  $scope.ios = ua.match /(ipad|iphone);.*cpu.*os 7_\d/i
   #  console.log ios
-  #  navigator.geolocation?.getCurrentPosition((position)->
-#    $scope.current_location = position.coords.latitude
-#    console.log(position, $scope.current_location)
-#    alert $scope.current_location
-#  );
+  navigator.geolocation?.getCurrentPosition((position)->
+    Location.current_location = position.coords.latitude.toString() + "," + position.coords.longitude.toString()
+    #console.log(position, $scope.location.current_location)
+    $scope.$digest()
+    # alert $scope.clt
+  )
   pull = ()->
     p =
       method: 'GET',
@@ -50,4 +54,5 @@ app.filter('escape', ()->
   window.escape;
 );
 app.service 'Friends', FriendsClass
+app.service 'Location', LocationService
 app.controller 'ListController', ListController
