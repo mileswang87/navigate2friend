@@ -7,47 +7,41 @@
             height: 100%;
         }
 
-        .h600 {
-            height: 600px;
-        }
 
-        .mt50 {
-            margin-top: 50px;
-        }
 
-        .img32{
-            height: 32px;
-            width: 32px;
+        [ng\:cloak], [ng-cloak], .ng-cloak {
+            display: none !important;
         }
 
     </style>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/base.css" rel="stylesheet"/>
 </head>
-<body ng-app="pickmeup">
+<body ng-app="pickmeup" ng-cloak>
 <div class="container h600 mt50">
     <div class="col-md-3 panel panel-default">
-        <div class="panel-body">
+        <div class="panel-body" ng-controller="ListController">
             <ul class="list-group">
-                <li class="list-group-item">
+                <!--<li class="list-group-item">-->
+                    <!--<img src="images/jiong.png" class="img32"/>-->
+                    <!--Adam-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                    <!--<img src="images/jiong.png" class="img32"/>-->
+                    <!--Bob-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                    <!--<img src="images/jiong.png" class="img32"/>-->
+                    <!--Catherine-->
+                <!--</li>-->
+                <li class="list-group-item" ng-repeat="friend in friends_list">
                     <img src="images/jiong.png" class="img32"/>
-                    Adam
-                </li>
-                <li class="list-group-item">
-                    <img src="images/jiong.png" class="img32"/>
-                    Bob
-                </li>
-                <li class="list-group-item">
-                    <img src="images/jiong.png" class="img32"/>
-                    Catherine
-                </li>
-                <li class="list-group-item">
-                    <img src="images/jiong.png" class="img32"/>
-                    {{ name||"InvisibleGuy" }}
+                    {{ friend||"InvisibleGuy" }}
                 </li>
             </ul>
-            <label>
-                <input type="text" ng-model="name" />
-            </label>
+            <!--<label>-->
+                <!--<input type="text" ng-model="name_1" />-->
+            <!--</label>-->
             <button onclick="calcRoute()">Route!!</button>
             <!--<button onclick="dropMarker()">Mark!!</button>-->
         </div>
@@ -62,5 +56,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script src="javascript/main.js"></script>
+<script src="javascript/controller.js"></script>
 </body>
 </html>
