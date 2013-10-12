@@ -26,7 +26,7 @@
     $scope.friends = Friends;
     $scope.location = Location;
     ua = navigator.userAgent.toLowerCase();
-    $scope.ios = ua.match(/(ipad|iphone);.*cpu.*os 7_\d/i);
+    $scope.ios = ua.match(/ipad|iphone/);
     if ((_ref = navigator.geolocation) != null) {
       _ref.getCurrentPosition(function(position) {
         Location.current_location = position.coords.latitude.toString() + "," + position.coords.longitude.toString();

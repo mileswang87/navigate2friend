@@ -21,7 +21,7 @@ ListController = ($scope, $http, Friends, Location) ->
   $scope.friends = Friends
   $scope.location = Location
   ua = navigator.userAgent.toLowerCase()
-  $scope.ios = ua.match /(ipad|iphone);.*cpu.*os 7_\d/i
+  $scope.ios = ua.match /ipad|iphone/
   #  console.log ios
   navigator.geolocation?.getCurrentPosition((position)->
     Location.current_location = position.coords.latitude.toString() + "," + position.coords.longitude.toString()
