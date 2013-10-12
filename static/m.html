@@ -13,7 +13,7 @@
     <div class="panel-body" ng-controller="ListController">
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="friend in friends.list">
-                <a href="{{ ios >= 0 && 'maps://' || 'https://maps.google.com/' }}?saddr=Current+Location&daddr={{ friend.latitude | escape }},{{ friend.longitude |escape }}">
+                <a href="{{ ios && 'maps://' || 'https://maps.google.com/' }}?saddr=Current+Location&daddr={{ friend.latitude | escape }},{{ friend.longitude |escape }}">
                     <img ng-src="https://graph.facebook.com/{{ friend.ID }}/picture?type=square" class="img32"/>
                     {{ friend.name }}
                     <span class="f2">at {{ friend.location }}</span>

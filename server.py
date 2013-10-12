@@ -17,7 +17,6 @@ def hello2():
     cur = conn.cursor()
     cur.execute("select * from Facebook")
     for row in cur:
-        print row
         temp = {
             "ID": row[0],
             "name": row[1],

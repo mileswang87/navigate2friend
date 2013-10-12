@@ -21,7 +21,8 @@
     var ios, pull, ua;
     $scope.friends = Friends;
     ua = navigator.userAgent;
-    ios = ua.indexOf('iPhone') || ua.indexOf('iPad') || ua.indexOf('iPod');
+    ios = ua.indexOf('iPhone') >= 0 || ua.indexOf('iPad') >= 0 || ua.indexOf('iPod') >= 0;
+    console.log(ios);
     pull = function() {
       var p;
       p = {
