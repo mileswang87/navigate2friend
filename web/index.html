@@ -2,8 +2,62 @@
 <html>
 <head>
     <title></title>
+    <style>
+        #map-canvas {
+            height: 100%;
+        }
+
+        .h600 {
+            height: 600px;
+        }
+
+        .mt50 {
+            margin-top: 50px;
+        }
+
+        .img32{
+            height: 32px;
+            width: 32px;
+        }
+
+    </style>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
+<div class="container h600 mt50">
+    <div class="col-md-2 panel panel-default">
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <img src="images/jiong.png" class="img32"/>
+                    Adam
+                </li>
+                <li class="list-group-item">
+                    <img src="images/jiong.png" class="img32"/>
+                    Bob
+                </li>
+                <li class="list-group-item">
+                    <img src="images/jiong.png" class="img32"/>
+                    Catherine
+                </li>
+                <li class="list-group-item">
+                    <img src="images/jiong.png" class="img32"/>
+                    Daniel
+                </li>
+            </ul>
+            <button onclick="calcRoute()">Route!!</button>
+            <!--<button onclick="dropMarker()">Mark!!</button>-->
+        </div>
+    </div>
+    <div class="col-md-10 panel panel-default">
+        <div class="panel-body h600">
+        <div id="map-canvas"></div>
+
+        </div>
+    </div>
+</div>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>-->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script src="javascript/main.js"></script>
 </body>
 </html>
