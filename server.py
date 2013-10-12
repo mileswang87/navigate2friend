@@ -25,8 +25,8 @@ def hello2():
     conn.close()
     return json.dumps(result)
 
-# if __name__ == "__main__":
-#     app.run()
+if __name__ == "__main__":
+    app.run()
 
 
 
