@@ -8,7 +8,7 @@
       return this.list = [
         {
           name: "Adam",
-          location: "San Jose"
+          location: "37.47,-122.25"
         }, {
           name: "bob",
           location: "San Francisco"

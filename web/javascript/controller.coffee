@@ -4,7 +4,13 @@
 FriendsClass = () ->
   @list = []
   @demo = () ->
-    @list = [{name:"Adam", location:"San Jose"}, {name:"bob", location:"San Francisco"}]
+    @list = [
+      name:"Adam",
+      location:"37.47,-122.25"
+    ,
+      name:"bob",
+      location:"San Francisco"
+    ]
 
 ListController = ($scope, Friends) ->
   Friends.demo()

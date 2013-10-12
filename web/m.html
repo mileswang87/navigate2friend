@@ -9,20 +9,17 @@
 
 </head>
 <body ng-app="pickmeup" ng-cloak>
-<div class="container panel panel-body">
+<div class="panel panel-body">
     <div class="panel-body" ng-controller="ListController">
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="friend in friends_list">
-                <a href="maps://?q={{ friend.location | escape }}">
+                <a href="maps://?saddr=Current+Location&daddr={{ friend.location | escape }}">
                     <img src="images/jiong.png" class="img32"/>
                     {{ friend.name }}
+                    <span class="f2">at {{ friend.location }}</span>
                 </a>
             </li>
         </ul>
-        <!--<label>-->
-        <!--<input type="text" ng-model="name_1" />-->
-        <!--</label>-->
-        <!--<button onclick="dropMarker()">Mark!!</button>-->
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
