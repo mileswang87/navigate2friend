@@ -18,11 +18,10 @@
   };
 
   ListController = function($scope, $http, Friends) {
-    var ios, pull, ua;
+    var pull, ua;
     $scope.friends = Friends;
     ua = navigator.userAgent.toLowerCase();
-    ios = ua.indexOf('iphone') >= 0 || ua.indexOf('ipad') >= 0 || ua.indexOf('ipod') >= 0;
-    console.log(ios);
+    $scope.ios = ua.match(/(iPod|iPhone|iPad)/);
     pull = function() {
       var p;
       p = {
