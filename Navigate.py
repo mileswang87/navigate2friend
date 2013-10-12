@@ -5,7 +5,7 @@ from facepy import GraphAPI
 import datetime
 
 today = str(datetime.datetime.now()).split(" ")[0]
-conn = sqlite3.connect('test.db')
+conn = sqlite3.connect('Facebook.db')
 conn.execute("DROP TABLE IF EXISTS Facebook")
 conn.execute("CREATE TABLE Facebook(Id TEXT, Name TEXT, Lati TEXT, Longi TEXT)")
 token = 'YOUR_TOKEN HERE'

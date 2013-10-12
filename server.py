@@ -13,15 +13,17 @@ def hello():
 @app.route("/list")
 def hello2():
     result = []
-    conn = sqlite3.connect('test.db')
+    conn = sqlite3.connect('Facebook.db')
     cur = conn.cursor()
     cur.execute("select * from Facebook")
     for row in cur:
+        print row
         temp = {
             "ID": row[0],
             "name": row[1],
-            "latitude": row[2],
-            "longitude": row[3]
+            "location": row[2],
+            "latitude": row[3],
+            "longitude": row[4]
         }
         result.append(temp)
     conn.close()

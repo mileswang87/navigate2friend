@@ -16,10 +16,11 @@
                 <a href="{{ ios >= 0 && 'maps://' || 'https://maps.google.com/' }}?saddr=Current+Location&daddr={{ friend.latitude | escape }},{{ friend.longitude |escape }}">
                     <img ng-src="https://graph.facebook.com/{{ friend.ID }}/picture?type=square" class="img32"/>
                     {{ friend.name }}
-                    <!--<span class="f2">at {{ friend.location }}</span>-->
+                    <span class="f2">at {{ friend.location }}</span>
                 </a>
             </li>
         </ul>
+        <!--<span>{{ current_location }}</span>-->
         <!--<ul class="nav nav-pills nav-justified">-->
             <!--<li class="active" ng-click="test()"><a>Native Map</a></li>-->
             <!--<li ng-click="test()"><a>Google Map</a></li>-->

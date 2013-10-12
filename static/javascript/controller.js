@@ -21,10 +21,7 @@
     var ios, pull, ua;
     $scope.friends = Friends;
     ua = navigator.userAgent;
-    console.log(ua);
     ios = ua.indexOf('iPhone') || ua.indexOf('iPad') || ua.indexOf('iPod');
-    console.log(ios);
-    console.log(ios >= 0 && 'maps://' || 'https://maps.google.com/');
     pull = function() {
       var p;
       p = {

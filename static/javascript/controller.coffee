@@ -18,10 +18,12 @@ ListController = ($scope, $http, Friends) ->
 #  Friends.demo()
   $scope.friends = Friends
   ua = navigator.userAgent
-  console.log ua
   ios = ua.indexOf('iPhone') || ua.indexOf('iPad') || ua.indexOf('iPod')
-  console.log ios
-  console.log ios >= 0 && 'maps://' || 'https://maps.google.com/'
+#  navigator.geolocation?.getCurrentPosition((position)->
+#    $scope.current_location = position.coords.latitude
+#    console.log(position, $scope.current_location)
+#    alert $scope.current_location
+#  );
   pull = ()->
     p =
       method: 'GET',
