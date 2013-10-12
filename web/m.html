@@ -13,8 +13,10 @@
     <div class="panel-body" ng-controller="ListController">
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="friend in friends_list">
-                <img src="images/jiong.png" class="img32"/>
-                {{ friend }}
+                <a href="maps://?q={{ friend.location | escape }}">
+                    <img src="images/jiong.png" class="img32"/>
+                    {{ friend.name }}
+                </a>
             </li>
         </ul>
         <!--<label>-->

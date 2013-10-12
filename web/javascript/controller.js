@@ -5,17 +5,34 @@
   FriendsClass = function() {
     this.list = [];
     return this.demo = function() {
-      return this.list = ["Adam", "Bob", "Catherine", "Daniel"];
+      return this.list = [
+        {
+          name: "Adam",
+          location: "San Jose"
+        }, {
+          name: "bob",
+          location: "San Francisco"
+        }
+      ];
     };
   };
 
   ListController = function($scope, Friends) {
     Friends.demo();
     $scope.friends_list = Friends.list;
-    return Friends.list.push("Miles");
+    return Friends.list.push({
+      name: "Miles",
+      location: "Daly City"
+    });
   };
 
-  app = angular.module('pickmeup', []);
+  app = angular.module('pickmeup', [], function($compileProvider) {
+    return $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|maps):/);
+  });
+
+  app.filter('escape', function() {
+    return window.escape;
+  });
 
   app.service('Friends', FriendsClass);
 

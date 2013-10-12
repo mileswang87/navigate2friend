@@ -35,8 +35,10 @@
                     <!--Catherine-->
                 <!--</li>-->
                 <li class="list-group-item" ng-repeat="friend in friends_list">
+                <a href="http://maps.apple.com/?q=san%20francisco">
                     <img src="images/jiong.png" class="img32"/>
-                    {{ friend||"InvisibleGuy" }}
+                    {{ friend.name }}
+                </a>
                 </li>
             </ul>
             <!--<label>-->
