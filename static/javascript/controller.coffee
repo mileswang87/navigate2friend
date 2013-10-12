@@ -17,7 +17,11 @@ FriendsClass = () ->
 ListController = ($scope, $http, Friends) ->
 #  Friends.demo()
   $scope.friends = Friends
-#  Friends.list.push({name:"Miles", location:"Daly City"})
+  ua = navigator.userAgent
+  console.log ua
+  ios = ua.indexOf('iPhone') || ua.indexOf('iPad') || ua.indexOf('iPod')
+  console.log ios
+  console.log ios >= 0 && 'maps://' || 'https://maps.google.com/'
   pull = ()->
     p =
       method: 'GET',
@@ -25,7 +29,7 @@ ListController = ($scope, $http, Friends) ->
       cache: false
     $http(p)
     .success((data)->
-        console.log(data)
+#        console.log(data)
         Friends.list = data
       )
     .error(()->
