@@ -25,9 +25,10 @@ while True:
                     if 'place' in item:
                         if today == str(item['created_time'].split('T')[0]):
                             if 'latitude' in item['place']['location']:
+                                print item
                                 id = name['id']
                                 name1 = name['name']
-                                loca = item['place']['location']['city']
+                                loca = item['place']['name']
                                 lat = item['place']['location']['latitude']
                                 long = item['place']['location']['longitude']
                                 conn.execute("INSERT OR REPLACE INTO Facebook VALUES('%s','%s', '%s','%s', '%s')" %(id, name1,loca, lat, long))
