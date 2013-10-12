@@ -16,10 +16,14 @@ ListController = ($scope, Friends) ->
   Friends.demo()
   $scope.friends_list = Friends.list
   Friends.list.push({name:"Miles", location:"Daly City"})
+  $scope.test = ()->
+    alert 123
 
 app = angular.module('pickmeup', [], ($compileProvider)->
   $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|maps):/);
 )
+
+ajaxGet = ()->
 app.filter('escape', ()->
   window.escape;
 );
