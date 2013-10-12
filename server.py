@@ -1,12 +1,14 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 import json
 import sqlite3
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def hello():
-    return "Hello World!"
+    return redirect('static/m.html')
+
 
 @app.route("/list")
 def hello2():

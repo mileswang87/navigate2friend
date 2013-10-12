@@ -12,12 +12,27 @@ FriendsClass = () ->
       location:"San Francisco"
     ]
 
-ListController = ($scope, Friends) ->
-  Friends.demo()
-  $scope.friends_list = Friends.list
-  Friends.list.push({name:"Miles", location:"Daly City"})
-  $scope.test = ()->
-    alert 123
+
+
+ListController = ($scope, $http, Friends) ->
+#  Friends.demo()
+  $scope.friends = Friends
+#  Friends.list.push({name:"Miles", location:"Daly City"})
+  pull = ()->
+    p =
+      method: 'GET',
+      url: "../list",
+      cache: false
+    $http(p)
+    .success((data)->
+        console.log(data)
+        Friends.list = data
+      )
+    .error(()->
+        console.log arguments
+      )
+  pull()
+
 
 app = angular.module('pickmeup', [], ($compileProvider)->
   $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|maps):/);

@@ -17,16 +17,24 @@
     };
   };
 
-  ListController = function($scope, Friends) {
-    Friends.demo();
-    $scope.friends_list = Friends.list;
-    Friends.list.push({
-      name: "Miles",
-      location: "Daly City"
-    });
-    return $scope.test = function() {
-      return alert(123);
+  ListController = function($scope, $http, Friends) {
+    var pull;
+    $scope.friends = Friends;
+    pull = function() {
+      var p;
+      p = {
+        method: 'GET',
+        url: "../list",
+        cache: false
+      };
+      return $http(p).success(function(data) {
+        console.log(data);
+        return Friends.list = data;
+      }).error(function() {
+        return console.log(arguments);
+      });
     };
+    return pull();
   };
 
   app = angular.module('pickmeup', [], function($compileProvider) {
