@@ -12,6 +12,7 @@
   ListController = function($scope, Friends) {
     Friends.demo();
     $scope.friends_list = Friends.list;
+    Friends.list.push("from outside");
     return $scope.name_1 = 123;
   };
 

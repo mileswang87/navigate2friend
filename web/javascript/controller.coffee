@@ -9,6 +9,7 @@ FriendsClass = () ->
 ListController = ($scope, Friends) ->
   Friends.demo()
   $scope.friends_list = Friends.list
+  Friends.list.push("from outside")
   $scope.name_1 = 123
 
 app = angular.module('pickmeup', [])
